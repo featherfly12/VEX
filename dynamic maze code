@@ -1,0 +1,11 @@
+def when_started1():
+    drivetrain.set_drive_velocity(999, PERCENT)
+    drivetrain.set_turn_velocity(999, PERCENT)
+    while not down_eye.detect(RED):
+        if front_eye.detect(RED):
+            drivetrain.turn_for(LEFT, 90, DEGREES)
+        else:
+            drivetrain.drive_for(FORWARD, 250, MM)
+            drivetrain.turn_for(RIGHT, 90, DEGREES)
+
+vr_thread(when_started1)
